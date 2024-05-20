@@ -107,3 +107,43 @@
 * `배열명[index]`
 * 배열의 `length` 속성은 index와 다르게 1부터 인식한다.
 * `배열.length` `객체.속성`
+### 배열의 추가 속성
+* `array.length` : 배열의 길이(개수) 확인`
+* `array.push()` : 배열의 마지막 자식 위치로 데이터 추가
+* `array.pop()` : 배열의 끝 값 제거
+* `array.unshift()` : 배열의 시작위치에 데이터 추가
+* `array.shift()` : 배열의 시작 값 제거
+## 객체 object
+* `변수생성키워드 객체명 = {속성:값, 속성:값,}`
+* 객체의 속성은 **key** 라고도 부른다.
+* 속성(key)명은 그 속성이 가진 값에 어울리는 의미적인 이름으로 작성한다.(정해진 키워드가 아님)
+* 객체 속성에 2개 이상의 값을 설정할때는 배열을 이용해야한다.
+* `객체명 = {key:['배열첫번째값', '배열두번째값'],}`
+## 객체와 배열
+* 키: 값 구조로 된 객체를 큰 분류로 2개 이상 제작할 때는 배열을 이용해야 한다.
+* 배열을 먼저 묶고, 배열의 값 위치에 객체를 의미하는 `{}`를 묶어주는 것으로 시작한다.
+* `const 이름 = [{},{},{}...]`
+* `const 이름 = [{key:value, key:value,},{},{}...]`
+* `const 이름 = [{key:[v1, v2], {key:value},{},{}...]`
+# DOM
+## window.location
+* ``
+## window.document, window.open
+* 현재 창의 문서(document)의 읽기, 쓰기, 수정
+## html 태그에 자바스크립트 적용하기
+* 지금까지 했던 인라인 스크립트 형과 달리
+### 인라인 스크립트를 피하는 방법 = dom 객체
+* dom = document object model
+* 상호작용 하는 태그를 자바스크립트 내에서 객체로 만든다.
+* 객체.속성
+* 객체.메서드
+# 주의할 점 (외부 스크립트)
+* 외부 script를 Head 태그 내에 작성하면 html 읽기 전으로 dom 연결 시 undefined가 출력된다.
+* 외부 script를 body 태그 내에 모든 태그 입력 후 가장 아래쪽에 작성하면 모든 태그를 읽은 후이기 때문에 js 내에서 dom 연결 시 올바른 dom 정보가 출력된다.
+* `<script src="./파일명/파일명.js" defer></script>` : **defer** 작성하면, 제일 마지막에 읽어서 마지막에 쓰는 것처럼 된다.
+# html 태그 - 자바스크립트 연결법
+* `const 태그이름Tag = document.getElementsByTagName('태그이름')`
+## 정확하게 태그 선택하는 법
+* `ul > li*3 > a*3 ` 일때, 첫번째 자손 'a' 선택하는법.
+* `const aTag =  liTag[1].getElementsByTagName('a')`
+* `console.log(aTag[0])` : 첫번재 자손 'a'만 출력된다.

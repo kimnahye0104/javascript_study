@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom 240520</title>
+    <script src="./script/dom1.js" defer></script><!-- head 안에 그냥 작성하면, 태그를 읽기 전이라 undefind로 뜬다. -->
+</head>
+<body>
+    <button type="button" id="link" onClick="btn_func()">구글 바로가기</button>
+    <button type="button" onClick="txt_func()">html에 "hello js 글자 표시하기"</button>
+    <button type="button" onClick="google_open()">구글 새탭으로 열기</button>
+    <button type="button" onClick="google_500_open()">500x500 구글 새창</button>
+    <hr>
+    <h1>대제목</h1>
+    <h1>대제목</h1>
+    <!-- <script src="./script/dom1.js"></script> --> 
+    <!-- 스크립트 위치 때문에. 읽힘. 순서대로 읽고 출력하는 자바스크립트 특징 주의하기 -->
+    <!-- 
+        * 외부 script를 Head 태그 내에 작성하면 html 읽기 전으로 dom 연결 시 undefined가 출력된다.
+        * 외부 script를 body 태그 내에 모든 태그 입력 후 가장 아래쪽에 작성하면 모든 태그를 읽은 후이기 때문에 js 내에서 dom 연결 시 올바른 dom 정보가 출력된다.
+    -->
+    <ul>
+        <li><a href="#">link1</a></li>
+        <li><a href="#">link2</a></li>
+        <li><a href="#">link3</a></li>
+    </ul>
+    <hr>
+    <h2 class="title">제목2</h2>
+    <h3 class="title">제목3</h3>
+    <ul>
+        <li class="list"><a href="#">a1</a></li>
+        <li class="list"><a href="#">a2</a></li>
+        <li class="list"><a href="#">a3</a></li>
+    </ul>
+    <hr>
+    <ul class="gnb">
+        <li><a href="#">memu1</a>
+            <ul class="lnb">
+                <li><a href="#">sub_memu1</a></li>
+                <li><a href="#">sub_memu2</a></li>
+            </ul>
+        </li>
+        <li><a href="#">memu2</a>
+            <ul class="lnb">
+                <li><a href="#">sub_memu1</a></li>
+                <li><a href="#">sub_memu2</a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
