@@ -81,3 +81,137 @@
 * 위 쉼표 구분은 문자 "a는"과 변수 a를 각각 다르게 구분하여 필요 시 문자와 변수를 다르게 처리할 수 있다.
 * `console.log("a는"+ a)`
 * 위 연결연산자는 문자 "a는"과 변수 a를 하나로 연결하여 데이터를 하나로 통합시킨다. 기존 데이터 특징을 없애고 통일하기 때문에 추가 처리가 새로운 연산자를 쓰는 경우가 아니라면 불가능하다. (추가 괄호로 우선순위 설정 가능)
+### `+` 연결연산자와 더하기연산자
+* 좌항, 우항에 들어간 데이터 종류에 따라 연결, 더하기가 구분된다.
+* 숫자 + 숫자 = 숫자 (더하기)
+* 문자 + 문자 = 문자 (연결)
+* 문자 + 숫자 = 문자 (연결)
+### 자바스크립트 변수, 함수 주의사항
+* 목표설정 기준으로 모든 데이터를 변수에 대입해야 한다.
+* 2개 이상의 데이터들을 이용해서 최종 산술식이 필요한 경우는 최종 변수도 따로 만드는 것이 좋다.
+* 다양한 목적으로 사용 가능한 변수는 반드시 전역변수로 생성하여 위치 제한 없이 사용할 수 있도록 한다.
+* 특정 함수 내에서 일회성으로 사용하는 변수는 `function`내에서 작성하여 지역변수로 사용한다.
+* 함수의 지역변수로 생성 시 서로 다른 함수에서 해당 지역변수 이름을 중복사용할 수 있다.
+* `function func1(){ let a = 1; }`
+* `function func2(){ let a = 1; }`
+### 데이터 타입
+* 문법 : `console.log(${typeof 변수이름})
+## 배열
+* 2개 이상 데이터를 저장할 때 배열을 사용해야 한다.
+* `const 배열명 = new Array(데이터1,데이터2)`
+* `let 배열명 = [데이터1, 데이터2, 데이터3]`
+* `var 배열명 = new Array(5)` //빈 5개의 배열 준비
+* 배열 데이터는 0부터 데이터를 인식한다.
+* 2번째 데이터를 출력하고 싶으면? 배열번호는 -1해서 1번
+* 배열의 데이터 번호 == index (ex 금요일의 index는 4입니다..)
+* `배열명[index]`
+* 배열의 `length` 속성은 index와 다르게 1부터 인식한다.
+* `배열.length` `객체.속성`
+### 배열의 추가 속성
+* `array.length` : 배열의 길이(개수) 확인`
+* `array.push()` : 배열의 마지막 자식 위치로 데이터 추가
+* `array.pop()` : 배열의 끝 값 제거
+* `array.unshift()` : 배열의 시작위치에 데이터 추가
+* `array.shift()` : 배열의 시작 값 제거
+## 객체 object
+* `변수생성키워드 객체명 = {속성:값, 속성:값,}`
+* 객체의 속성은 **key** 라고도 부른다.
+* 속성(key)명은 그 속성이 가진 값에 어울리는 의미적인 이름으로 작성한다.(정해진 키워드가 아님)
+* 객체 속성에 2개 이상의 값을 설정할때는 배열을 이용해야한다.
+* `객체명 = {key:['배열첫번째값', '배열두번째값'],}`
+## 객체와 배열
+* 키: 값 구조로 된 객체를 큰 분류로 2개 이상 제작할 때는 배열을 이용해야 한다.
+* 배열을 먼저 묶고, 배열의 값 위치에 객체를 의미하는 `{}`를 묶어주는 것으로 시작한다.
+* `const 이름 = [{},{},{}...]`
+* `const 이름 = [{key:value, key:value,},{},{}...]`
+* `const 이름 = [{key:[v1, v2], {key:value},{},{}...]`
+# DOM
+## window.location
+* ``
+## window.document, window.open
+* 현재 창의 문서(document)의 읽기, 쓰기, 수정
+## html 태그에 자바스크립트 적용하기
+* 지금까지 했던 인라인 스크립트 형과 달리
+### 인라인 스크립트를 피하는 방법 = dom 객체
+* dom = document object model
+* 상호작용 하는 태그를 자바스크립트 내에서 객체로 만든다.
+* 객체.속성
+* 객체.메서드
+# 주의할 점 (외부 스크립트)
+* 외부 script를 Head 태그 내에 작성하면 html 읽기 전으로 dom 연결 시 undefined가 출력된다.
+* 외부 script를 body 태그 내에 모든 태그 입력 후 가장 아래쪽에 작성하면 모든 태그를 읽은 후이기 때문에 js 내에서 dom 연결 시 올바른 dom 정보가 출력된다.
+* `<script src="./파일명/파일명.js" defer></script>` : **defer** 작성하면, 제일 마지막에 읽어서 마지막에 쓰는 것처럼 된다.
+# html 태그 - 자바스크립트 연결법
+* `const 태그이름Tag = document.getElementsByTagName('태그이름')`
+## 정확하게 태그 선택하는 법
+* `ul > li*3 > a*3 ` 일때, 첫번째 자손 'a' 선택하는법.
+* `const aTag =  liTag[1].getElementsByTagName('a')`
+* `console.log(aTag[0])` : 첫번재 자손 'a'만 출력된다.
+--------------------------
+## BOM, DOM
+### BOM(Browser Object Model)
+*  `window` 최상위 객체를 기준으로 속성, 메소드 이용
+* 자주 사용하는 속성, 메소드 :  `alert()`, `prompt()`, `comfirm()`, `location()` 등...
+* `window.alert();`
+* `alert();`
+### DOM (Document Object Model)
+* `document` 본문 최상위 객체 대상으로 속성, 메소드 이용, 생략할 수 없다.
+#### DOM 선택 시 자주 사용하는 메서드(함수) 종류
+* `document.getElementsByTagName("태그명")`
+* `document.getElementsByClassName("클래스명")`
+* `document.getElementById("아이디명")`
+* `document.querySelector("태그명")`
+* `document.querySelector(".클래스명")`
+* `document.querySelector("#아이디명")`
+* `document.querySelectorAll("태그명")`
+* `document.querySelectorAll(".클래스명")`
+* `getElements...`와 `querySelectorAll` 함수는 `index`를 사용해서 대상을 선택하므로 사용 시 주의가 필요하다.
+## 속성
+### 자바스크립트 고유 속성
+### css 속성
+---------------------------------------
+## 가족관계선택속성
+*  `parentNode`, `parentElement`
+*  `header>nav`관계 dom이 있을때 `nav`의 부모를 선택할때 이용할 수 있다.
+* DOM.parentNode, DOM.parentElement.parentElement 등..
+* `childNodes`, `children`
+* 
+* `firstChild`, `firstElementChild`
+* 
+* `lastChild`, `lastElementChild`
+* 
+* `nextSibling`, `nextElementSibling`
+* 
+* `previousSibling`, `previousElementSibling`
+* 
+## 자바스크립트 객체 속성
+* `innerHTML` : 객체.속성
+*  자바스크립트로 HTML DOM 제작시 HTML 읽기, 삽입, 수정 진행용으로 사용하는 속성
+* `<em>0</em>`
+* `<span class="a"></span>` -> `<span class="b">0</span>`
+* `<span>0</span>` span 태그가 아닌 단순 문자 0 값만 변경하려고 할 때 사용하는 속성
+* `innerText` : 객체.속성
+* 변경하려고 할 때 사용하는 속성
+## 자바스크립트 연산자
+* `=` 대입 연산자
+* 새로운 값이 대입되면 기존 값을 제거한다.
+* `var a = 10`
+* `a = 20` 최종 a의 결과는?
+* `+=` 복합대입연산자
+* `var a = 10`
+* `a += 20` 최종 a의 결과는?
+* 최종 결과 = `30` : `a = a+20`
+## 삼항 연산자
+* 조건에 따라 값을 참과 거짓을 구분할 때 사용하는 연산자
+* `조건? 조건값이 참일 때 실행 : 조건값이 거짓일때 실행`
+* 조건 작성 위치에 비교연산자를 사용한다.
+* 비교 연산자 : <, >, ==, <=, >=,
+* `==` : 같다는 의미 / `=`: 대입한다는 의미
+## 조건문
+* `if(조건식){조건식이 참일 경우 실행결과}`
+* `if(조건식){참 실행}else{조건식이 거짓일때 실행결과}`
+* 조건식 작성 시 주의사항 > 참, 거짓으로 결과가 구분되는 데이터를 확인하고 작성해야 한다.
+* ### falsy 구분되는 값
+* false, null, undfined, NaN, 0, ""
+### truthy 구분되는 값
+* false가 아닌 모든 값, [], {}
