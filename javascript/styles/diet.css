@@ -1,0 +1,67 @@
+main {
+    font-family: "Noto Sans KR", sans-serif;
+    width: 700px; margin: 30px auto 0;
+    background-color: beige;
+    text-align: center;
+    padding: 60px 0;
+    border-radius: 10px;
+}
+main h1 {
+    font-size: 1.75rem; font-weight: 700;
+}
+main > p:nth-child(2) {
+    font-size: 1.25rem;
+    margin: 20px 0;
+}
+main ul {
+    width: 300px; height: 200px; margin: 0 auto;
+    display: flex; flex-flow: column nowrap;
+    justify-content: space-around;
+}
+main ul li {
+
+    width: 100%;
+    display: flex; flex-flow: row nowrap;
+    align-items: center;
+}
+main ul li:nth-child(1) {}
+main ul li:nth-child(2) {}
+main ul li:nth-child(3) {}
+main ul li input {
+    display: inline-block; border: 0;
+    height: 30px; border-radius: 5px;
+}
+main ul li:nth-child(1) input {
+    width: 165px;
+    margin-left: 35px;
+    margin-right: 10px;
+}
+main ul li:nth-child(2) input {
+    width: 165px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+main ul li:nth-child(3) input {
+    width: 165px;
+    margin-left: 25px;
+}
+
+main p:last-child {}
+main p:last-child #result {
+    border: 0;
+    background-color: pink;
+    width: 500px;
+    padding:10px 0;
+    border-radius: 5px;
+    border: 1px solid #000;
+    margin: 10px 0 0;
+}
+
+/* 애니메이션 */
+main p:last-child #result:hover {
+    background-color: gray; color: #fff;
+    border: 0;
+}
+main ul li input:hover {
+    border: 1px solid #000;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nav 2 - 240522</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <script src="./script/nav2.js" defer></script>
+    <!-- 내부 스타일 시트 -->
+    <style>
+        header {
+            display: flex; 
+            height: 100px; padding: 0 40px;
+            align-items: center; 
+            justify-content: space-between;
+        }
+        header h1 {}
+        header h1 a {}
+        header h1 a img {}
+        header nav {}
+        header nav .gnb {
+            display: flex;
+        }
+        header nav .gnb > li {
+            width: 200px;
+            position: relative;
+        }
+        header nav .gnb > li > a {
+            width: 200px;
+            display: block;
+            line-height: 40px;
+            text-transform:uppercase; /* //대문자로 만드는 속성 */
+        }
+        header nav .gnb > li > .sub {
+            position: absolute;
+            left: 0; top: 40px;
+            width: 100%; height: 300px;
+            background-color: #fff;
+        }
+        header nav .gnb > li > .sub::after {
+            content: ''; display: block;
+            width: 1px; height: 270px;
+            background-color: #eee;
+            position: absolute; right:5px; top:15px;
+        }
+        header nav .gnb > li:last-child > .sub::after {
+            display: none;
+        }
+        header nav .gnb > li > .sub li {
+        }
+        header nav .gnb > li > .sub li a {
+            display: block;
+            line-height: 50px;
+            /* border: 1px solid #fff; */
+            padding-left: 5px;
+        }
+        main {}
+        main .visual {
+            background-image: url(https://i.pinimg.com/564x/56/7c/d6/567cd6e37776e01b9108f06ac1080f72.jpg);
+            height: calc(100vh - 100px);
+            background-position: center;
+            background-size: cover;
+        }
+        main .visual h1 {
+            text-align: center;
+            font-size: 4rem; font-weight: 700;
+            padding-top: 200px;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            color: #fff;
+        }
+        main .visual h1 span {
+            display: inline-block;
+            font-size: 5rem; margin: 10px 0;
+        }
+        header nav .gnb > li > .sub li a:hover {
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <!-- 마우스 올리면 내비 나오기2 menu hover : nav all down view -->
+    <header>
+        <h1><a href="#"><img src="./images/logo.jpg" alt="posco group brochure"></a></h1>
+        <nav>
+            <ul class="gnb">
+                <li>
+                    <a href="#">POSCO OVERVIEW</a>
+                    <ul class="sub">
+                        <li><a href="#">POSCO Group</a></li>
+                        <li><a href="#">Milesones</a></li>
+                        <li><a href="#">POSCO Hightights</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">POSCO VISION</a>
+                    <ul class="sub">
+                        <li><a href="#">경영 이념</a></li>
+                        <li><a href="#">기업시민헌장</a></li>
+                        <li><a href="#">기업시민 5대 비전</a></li>
+                        <li><a href="#">안전 경영</a></li>
+                        <li><a href="#">환경 경영</a></li>
+                        <li><a href="#">포스코그룹 비전</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">POSCO BUSINESS</a>
+                    <ul class="sub">
+                        <li><a href="#">철강</a></li>
+                        <li><a href="#">글로벌 인프라</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="visual">
+            <h1>철강을 넘어
+                <span>Green & Mobility</span><br>
+            </h1>
+            
+        </div>
+    </main>
+</body>
+</html>

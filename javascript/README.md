@@ -147,3 +147,71 @@
 * `ul > li*3 > a*3 ` 일때, 첫번째 자손 'a' 선택하는법.
 * `const aTag =  liTag[1].getElementsByTagName('a')`
 * `console.log(aTag[0])` : 첫번재 자손 'a'만 출력된다.
+--------------------------
+## BOM, DOM
+### BOM(Browser Object Model)
+*  `window` 최상위 객체를 기준으로 속성, 메소드 이용
+* 자주 사용하는 속성, 메소드 :  `alert()`, `prompt()`, `comfirm()`, `location()` 등...
+* `window.alert();`
+* `alert();`
+### DOM (Document Object Model)
+* `document` 본문 최상위 객체 대상으로 속성, 메소드 이용, 생략할 수 없다.
+#### DOM 선택 시 자주 사용하는 메서드(함수) 종류
+* `document.getElementsByTagName("태그명")`
+* `document.getElementsByClassName("클래스명")`
+* `document.getElementById("아이디명")`
+* `document.querySelector("태그명")`
+* `document.querySelector(".클래스명")`
+* `document.querySelector("#아이디명")`
+* `document.querySelectorAll("태그명")`
+* `document.querySelectorAll(".클래스명")`
+* `getElements...`와 `querySelectorAll` 함수는 `index`를 사용해서 대상을 선택하므로 사용 시 주의가 필요하다.
+## 속성
+### 자바스크립트 고유 속성
+### css 속성
+---------------------------------------
+## 가족관계선택속성
+*  `parentNode`, `parentElement`
+*  `header>nav`관계 dom이 있을때 `nav`의 부모를 선택할때 이용할 수 있다.
+* DOM.parentNode, DOM.parentElement.parentElement 등..
+* `childNodes`, `children`
+* 
+* `firstChild`, `firstElementChild`
+* 
+* `lastChild`, `lastElementChild`
+* 
+* `nextSibling`, `nextElementSibling`
+* 
+* `previousSibling`, `previousElementSibling`
+* 
+## 자바스크립트 객체 속성
+* `innerHTML` : 객체.속성
+*  자바스크립트로 HTML DOM 제작시 HTML 읽기, 삽입, 수정 진행용으로 사용하는 속성
+* `<em>0</em>`
+* `<span class="a"></span>` -> `<span class="b">0</span>`
+* `<span>0</span>` span 태그가 아닌 단순 문자 0 값만 변경하려고 할 때 사용하는 속성
+* `innerText` : 객체.속성
+* 변경하려고 할 때 사용하는 속성
+## 자바스크립트 연산자
+* `=` 대입 연산자
+* 새로운 값이 대입되면 기존 값을 제거한다.
+* `var a = 10`
+* `a = 20` 최종 a의 결과는?
+* `+=` 복합대입연산자
+* `var a = 10`
+* `a += 20` 최종 a의 결과는?
+* 최종 결과 = `30` : `a = a+20`
+## 삼항 연산자
+* 조건에 따라 값을 참과 거짓을 구분할 때 사용하는 연산자
+* `조건? 조건값이 참일 때 실행 : 조건값이 거짓일때 실행`
+* 조건 작성 위치에 비교연산자를 사용한다.
+* 비교 연산자 : <, >, ==, <=, >=,
+* `==` : 같다는 의미 / `=`: 대입한다는 의미
+## 조건문
+* `if(조건식){조건식이 참일 경우 실행결과}`
+* `if(조건식){참 실행}else{조건식이 거짓일때 실행결과}`
+* 조건식 작성 시 주의사항 > 참, 거짓으로 결과가 구분되는 데이터를 확인하고 작성해야 한다.
+* ### falsy 구분되는 값
+* false, null, undfined, NaN, 0, ""
+### truthy 구분되는 값
+* false가 아닌 모든 값, [], {}

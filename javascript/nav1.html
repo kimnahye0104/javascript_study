@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내비게이션-1</title>
+    <!-- 웹글꼴 : Noto Sans KR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <!-- 리셋파일 연결 -->
+    <link rel="stylesheet" href="./styles/reset.css">
+    <!-- 내부 디자인 시트 -->
+    <style>
+        header {
+            background-color: aqua; width: 1000px;
+            height: 100px; margin: 30px auto 0;
+        }
+        header h1 {}
+        header nav {}
+        header nav .gnb {
+            display: flex; flex-flow: row nowrap;
+            /* justify-content: space-around; */
+        }
+        header nav .gnb > li {
+            position: relative;
+            /* 크기와 위치를 잡을 땐 li부터 */
+            width: 200px; border: 1px solid red; height: 50px;
+        }
+        header nav .gnb > li > a {
+            background-color: yellow;
+            display: block; /* 부모의 너비 많음 배경(가로크기)이 잡힘. */
+            line-height: 50px; text-align: center;
+        }
+        header nav .gnb > li > .sub {
+            border: 2px solid blue;
+            position: absolute;
+            left: 0; top: 50px;
+            width: 100%;
+        }
+        header nav .gnb > li > .sub li {
+            
+        }
+        header nav .gnb > li > .sub li a {
+            background-color: lime;
+            display: block;
+            line-height: 30px;
+            text-align: center;
+        }
+        /* hover:영역 */
+        header nav .gnb > li > .sub li a:hover {
+            background-color: gray; color: white;
+        }
+        /* 
+            sub가 있는 nav 디자인 순서
+            1. 메인메뉴 디자인 전 서브 메뉴 숨기기 display: none;
+            2. 메인메뉴 디자인 진행
+            3. (메인디자인종류 후) 서브 숨긴 대상 보이기 (display: none)제거
+            4. 서브메뉴에 position: absolute 설정하고 디자인 진행
+        */
+    </style>
+    <script src="./script/nav1.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>logo</h1>
+        <nav>
+            <!-- 서브메뉴가 추가로 있는 내비게이션은 ul(메뉴)-li-ul(서브)-li -->
+            <ul class="gnb">
+                <li>
+                    <a href="#">menu1</a>
+                    <ul class="sub">
+                        <li><a href="#">sub1</a></li>
+                        <li><a href="#">sub2</a></li>
+                        <li><a href="#">sub3</a></li>
+                        <li><a href="#">sub4</a></li>
+                        <li><a href="#">sub5</a></li>
+                        <li><a href="#">sub6</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">menu2</a>
+                    <ul class="sub">
+                        <li><a href="#">sub1</a></li>
+                        <li><a href="#">sub2</a></li>
+                        <li><a href="#">sub3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">menu3</a>
+                    <ul class="sub">
+                        <li><a href="#">sub1</a></li>
+                        <li><a href="#">sub2</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">menu4</a>
+                    <ul class="sub">
+                        <li><a href="#">sub1</a></li>
+                        <li><a href="#">sub2</a></li>
+                        <li><a href="#">sub3</a></li>
+                        <li><a href="#">sub4</a></li>
+                        <li><a href="#">sub5</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
