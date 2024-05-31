@@ -1,0 +1,39 @@
+body{ font-family: "Noto Sans KR", sans-serif; letter-spacing: -0.4px;}
+header {
+    background-color: aqua;
+    height: 60px;
+    display: flex; flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+header h1 {}
+header h1 a {}
+header h1 a  img {}
+header nav {
+    width: 80%;
+    display: flex; flex-flow: row nowrap;
+    background-color: yellow;
+    margin-left: 40px;
+    justify-content: space-between;
+    align-items: center;
+}
+header nav ul {
+    width: 100%;
+    display: flex; flex-flow: row nowrap;
+    justify-content: space-around;
+}
+header nav ul li {}
+header nav ul li a {}
+header nav .right {
+    width: 100px;
+    background-color: #fff;
+    line-height: 40px;
+    text-align: right;
+}
+header nav .right a {}
+/* ---------------------- main 시작 */
+main {}
+main .bg {}
+main .bg1 {}
+main .bg1 h2 {}
