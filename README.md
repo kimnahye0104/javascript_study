@@ -215,3 +215,8 @@
 * false, null, undfined, NaN, 0, ""
 ### truthy 구분되는 값
 * false가 아닌 모든 값, [], {}
+### window mousemove 인식하는 매개변수 종류
+* 1. screenX, Y: 사용자 모니터 화면 기준으로 좌표 표시
+* 2. client X, Y : 웹브라우저의 뷰포트 크기 기준으로 좌표 표시
+* 3. offest X, Y : 객체(노드) 위치 기준으로 좌표 표시
+* 4. page X, Y : 전체 세로 길이 포함 문서 기준으로 좌표 표시
