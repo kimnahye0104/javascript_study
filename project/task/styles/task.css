@@ -35,5 +35,24 @@ header nav .right a {}
 /* ---------------------- main 시작 */
 main {}
 main .bg {}
-main .bg1 {}
-main .bg1 h2 {}
+main .bg1 {
+    background-image: url(../images/images/visual.png);
+    height: 100vh;
+    background-size: cover;
+    margin: 0 auto;
+    text-align: center;
+    background-color: pink;
+}
+main .bg1 h2 {
+    font-size: 4rem; font-weight: 700;
+    color: #fff;
+}
+main .bg1 > p {
+    margin: 30px 0;
+}
+main .bg1 .btn_area {}
+main .bg1 .btn_area a {
+    background-color: #000; color: #fff;
+    display: inline-block;
+    width: 160px; line-height: 30px;
+}
